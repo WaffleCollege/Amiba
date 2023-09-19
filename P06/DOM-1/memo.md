@@ -7,10 +7,10 @@ Dateというオブジェクトに、時間に関する*メソッド* (=オブ�
 Dateオブジェクトの詳細は[こちら](https://www.sejuku.net/blog/30171)
 
 ```js
-const today = new Date();
+//const today = new Date();
 
 // 今日の 年 を取得し、変数に保存
-let year = today.getFullYear();
+//let year = today.getFullYear();
 
 // 今日の 月 を取得し、変数に保存
 
