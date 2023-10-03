@@ -36,9 +36,11 @@ function big2(ele) {
     const para = document.querySelectorAll(ele);
     const para2 = [];
     for(let i = 0; i < para.length; i++) {
-        para2.push(para[i].innerHTML.toUpperCase());
+        //para2.push(para[i].innerHTML.toUpperCase());
+        para[i].textContent = para[i].textContent.toUpperCase();
+
     }
-    return para2;
+    //return para2;
 }
 
 
@@ -47,15 +49,15 @@ console.log("問題3-3の解答");
 console.log(big2("p")); //タグ
 console.log(big2('.inner-paragraph')); //class
 console.log(big2("#main-header")); //ID
-//console.log(big2("*"));
+console.log(big2("*"));
 
-//4
+//4 
 console.log("問題4の解答");
-function big3(ele) {
-    var para = document.querySelectorAll(ele);
+function big3() {
+    var para = document.querySelectorAll("*");
     const setText = [];
     //console.log(para[0].textContent);
-    para[0].textContent = para[0].textContent.toUpperCase();
+    para[0].innerHTML = para[0].innerHTML.toUpperCase();
     console.log(para[0].textContent);
     //para.textContent =para.textContent.toUpperCase();
     /*for(let i = 0; i < para.length; i++) {
@@ -67,4 +69,13 @@ function big3(ele) {
     }*/
 }
 
-console.log(big3("*"));
+//console.log(big3("*")); 
+
+function Omoji(){//タグ、id、クラス名で検索
+	const id = document.querySelectorAll("body")
+	console.log(id);
+	for(let i of id){
+		i.innerHTML = i.innerHTML.toUpperCase();
+	}
+}
+Omoji();
