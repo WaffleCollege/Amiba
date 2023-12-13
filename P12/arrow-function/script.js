@@ -87,8 +87,6 @@ test(getPositiveNumbers([-2, -4]), []);
 function  getQuestions(arr) {
     return arr.filter((x) => {
         let str = x.substring(0,1);
-        //let endstr = x.substring(str.length - 1, str.length);
-        //console.log(endstr);
         if(str === str.toUpperCase() && x.indexOf("?") !== -1) {
             return x;
         }
