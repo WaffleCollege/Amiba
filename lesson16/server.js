@@ -12,7 +12,7 @@ const Users = [
 ];
 
 // ユーザー一覧を返すAPI
-app.post("/getusers", (request, response) => {
+app.get("/users", (request, response) => {
   response.json(Users);
 });
 

@@ -15,21 +15,24 @@ const setupServer = () => {
 
   // ↓↓↓↓ 宿題のプログラムは、ここより下に書く
   app.get("/api/pokemon", (req, res) => {
-    res.send(pokeData);
+    // res.send(pokeData.pokemon);
+    let result = pokeData.pokemon;
+    const limit = req.query.limit;
+    console.log(limit);
+
+    if (limit) {
+      result = result.slice(0, limit);
+    }
+
+    // console.log(result);
+    res.send(result);
   });
 
   app.get("/api/pokemon/:id", (req, res) => {
     const id = req.params.id; // URLパラメータ "id" を取得
 
-    // pokeDataからIDが一致するポケモンを検索
-    const pokemon = pokeData.find((p) => p.id === id);
-
-    // ポケモンが見つかった場合はそのデータを返す、見つからない場合は404エラーを返す
-    if (pokemon) {
-      res.send(pokemon);
-    } else {
-      res.status(404).send("Pokemon not found.");
-    }
+    console.log(pokeData.pokemon[id - 1]);
+    res.send(pokeData.pokemon[id - 1]);
   });
   // ↑↑↑↑ 宿題のプログラムは、ここより上に書く
 
